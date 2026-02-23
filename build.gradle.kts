@@ -11,6 +11,9 @@ repositories {
 }
 
 dependencies {
+    implementation("info.picocli:picocli:4.7.7")
+    annotationProcessor("info.picocli:picocli-codegen:4.7.7")
+
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
@@ -19,7 +22,7 @@ dependencies {
 graalvmNative {
     binaries {
         named("main") {
-            imageName.set("Ligen")
+            imageName.set("ligen")
             mainClass.set("io.github.srtotopo.ligen.Main")
             fallback.set(false)
             buildArgs.add("--verbose")

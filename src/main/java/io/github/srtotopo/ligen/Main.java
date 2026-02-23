@@ -2,6 +2,7 @@ package io.github.srtotopo.ligen;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World! Ligen is working!");
+        int exitCode = new picocli.CommandLine(new Ligen()).execute(args);
+        System.exit(exitCode);
     }
 }
