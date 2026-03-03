@@ -26,6 +26,8 @@ graalvmNative {
             mainClass.set("io.github.srtotopo.ligen.Main")
             fallback.set(false)
             buildArgs.add("--verbose")
+            buildArgs.add("--enable-url-protocols=jar")
+            buildArgs.add("-H:IncludeResources=templates/.*\\.txt$")
         }
     }
 }
