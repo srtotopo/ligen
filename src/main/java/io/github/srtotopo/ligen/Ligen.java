@@ -1,6 +1,6 @@
 package io.github.srtotopo.ligen;
 
-import io.github.srtotopo.ligen.licenses.Mit;
+import io.github.srtotopo.ligen.commands.MitCommand;
 import picocli.CommandLine;
 
 @CommandLine.Command(
@@ -9,7 +9,7 @@ import picocli.CommandLine;
         description = "A command-line tool for generating licenses files for open-source projects.",
         mixinStandardHelpOptions = true,
         usageHelpAutoWidth = true,
-        subcommands = { Mit.class }
+        subcommands = { MitCommand.class }
 )
 public class Ligen implements Runnable {
     @Override

@@ -1,4 +1,4 @@
-package io.github.srtotopo.ligen.licenses;
+package io.github.srtotopo.ligen.commands;
 
 import io.github.srtotopo.ligen.options.IdentifyOption;
 import io.github.srtotopo.ligen.options.OutputOption;
@@ -15,7 +15,7 @@ import java.nio.file.Paths;
         mixinStandardHelpOptions = true,
         usageHelpAutoWidth = true
 )
-public class Mit implements Runnable {
+public class MitCommand implements Runnable {
     @CommandLine.Mixin
     private OutputOption output;
 
