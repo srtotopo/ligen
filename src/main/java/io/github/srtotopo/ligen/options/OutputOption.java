@@ -8,5 +8,5 @@ public class OutputOption {
             description = "The output file path for the generated license file.",
             defaultValue = "${sys:user.dir}"
     )
-    public String output;
+    public String path;
 }
