@@ -6,14 +6,14 @@ import java.time.Year;
 public class IdentifyOption {
     @CommandLine.Option(
             names = {"-n", "--name"},
-            description = "The name of the author or organization to be included in the license file.",
+            description = "Author or organization name. (Required)",
             required = true
     )
     public String name;
 
     @CommandLine.Option(
             names = {"-y", "--year"},
-            description = "The year to be included in the license file. Defaults to the current year."
+            description = "Year for copyright notice. (Default: current year)"
     )
     public String year = String.valueOf(Year.now().getValue());
 }

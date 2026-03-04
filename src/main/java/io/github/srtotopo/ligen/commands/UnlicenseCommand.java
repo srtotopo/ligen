@@ -9,9 +9,17 @@ import java.nio.file.Paths;
 
 @CommandLine.Command(
         name = "unlicense",
-        description = "Generates an Unlicense file.",
+        version = "1.0.0",
+        description = {
+                "Generate Unlicense",
+                "A public domain dedication that releases your software into the public domain with no restrictions",
+                "whatsoever. Perfect for those who want their work to be used freely without any legal strings attached."
+        },
         mixinStandardHelpOptions = true,
-        usageHelpAutoWidth = true
+        usageHelpAutoWidth = true,
+        synopsisHeading = "%nUsage:%n",
+        descriptionHeading = "%nDescription:%n%n",
+        optionListHeading = "%nOptions:%n"
 )
 public class UnlicenseCommand implements Runnable {
     @CommandLine.Mixin

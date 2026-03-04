@@ -9,9 +9,17 @@ import java.nio.file.Paths;
 
 @CommandLine.Command(
         name = "mozilla",
-        description = "Generates a Mozilla Public License 2 file.",
+        version = "1.0.0",
+        description = {
+                "Generate Mozilla Public License 2.0",
+                "A weak copyleft license that applies on a file-by-file basis. Modified files remain under MPL,",
+                "but can be combined with proprietary code in larger projects, balancing openness with flexibility."
+        },
         mixinStandardHelpOptions = true,
-        usageHelpAutoWidth = true
+        usageHelpAutoWidth = true,
+        synopsisHeading = "%nUsage:%n",
+        descriptionHeading = "%nDescription:%n%n",
+        optionListHeading = "%nOptions:%n"
 )
 public class MozillaCommand implements Runnable {
     @CommandLine.Mixin

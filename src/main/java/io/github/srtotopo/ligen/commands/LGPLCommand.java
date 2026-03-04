@@ -9,9 +9,17 @@ import java.nio.file.Paths;
 
 @CommandLine.Command(
         name = "lgpl",
-        description = "Generates a LGPL3 license file.",
+        version = "1.0.0",
+        description = {
+                "Generate LGPL v3 license",
+                "A weak copyleft license designed for software libraries. Allows proprietary software to link",
+                "and use LGPL libraries while maintaining some freedom guarantees for the LGPL components."
+        },
         mixinStandardHelpOptions = true,
-        usageHelpAutoWidth = true
+        usageHelpAutoWidth = true,
+        synopsisHeading = "%nUsage:%n",
+        descriptionHeading = "%nDescription:%n%n",
+        optionListHeading = "%nOptions:%n"
 )
 public class LGPLCommand implements Runnable {
     @CommandLine.Mixin

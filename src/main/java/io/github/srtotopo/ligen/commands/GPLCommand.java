@@ -13,9 +13,17 @@ import java.nio.file.Paths;
 
 @CommandLine.Command(
         name = "gpl",
-        description = "Generates a GPL3 license file.",
+        version = "1.0.0",
+        description = {
+                "Generate GPL v3 license",
+                "A strong copyleft license that ensures software remains free and open-source. Any derivatives",
+                "or modifications must also be released under GPL, protecting the freedom of all users."
+        },
         mixinStandardHelpOptions = true,
-        usageHelpAutoWidth = true
+        usageHelpAutoWidth = true,
+        synopsisHeading = "%nUsage:%n",
+        descriptionHeading = "%nDescription:%n%n",
+        optionListHeading = "%nOptions:%n"
 )
 public class GPLCommand implements Runnable {
     @CommandLine.Mixin
@@ -38,8 +46,8 @@ public class GPLCommand implements Runnable {
             String parsedLicense = ParserService.parse(license)
                     .name(identify.name)
                     .year(identify.year)
-                    .description(description.description)
-                    .program(program.programName)
+                    .description(description.text)
+                    .program(program.name)
                     .build();
 
             FileService.writeFile(parsedLicense, output.path);

@@ -12,9 +12,17 @@ import java.nio.file.Paths;
 
 @CommandLine.Command(
         name = "agpl",
-        description = "Generates an AGPL3 license file.",
+        version = "1.0.0",
+        description = {
+                "Generate AGPL v3 license",
+                "A network-oriented copyleft license that requires source code availability even for network",
+                "interactions. Ideal for web applications and cloud services that interact with users over the internet."
+        },
         mixinStandardHelpOptions = true,
-        usageHelpAutoWidth = true
+        usageHelpAutoWidth = true,
+        synopsisHeading = "%nUsage:%n",
+        descriptionHeading = "%nDescription:%n%n",
+        optionListHeading = "%nOptions:%n"
 )
 public class AGPLCommand implements Runnable {
     @CommandLine.Mixin
@@ -34,7 +42,7 @@ public class AGPLCommand implements Runnable {
             String parsedLicense = ParserService.parse(license)
                     .name(identify.name)
                     .year(identify.year)
-                    .description(description.description)
+                    .description(description.text)
                     .build();
 
             FileService.writeFile(parsedLicense, output.path);

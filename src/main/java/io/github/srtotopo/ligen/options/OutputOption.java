@@ -5,7 +5,7 @@ import picocli.CommandLine;
 public class OutputOption {
     @CommandLine.Option(
             names = {"-o", "--output"},
-            description = "The output file path for the generated license file.",
+            description = "Output file path. (Default: current directory)",
             defaultValue = "${sys:user.dir}"
     )
     public String path;

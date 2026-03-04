@@ -11,9 +11,17 @@ import java.nio.file.Paths;
 
 @CommandLine.Command(
         name = "apache",
-        description = "Generates an Apache 2 license file.",
+        version = "1.0.0",
+        description = {
+                "Generate Apache 2.0 license",
+                "A permissive license that allows use, modification and distribution with explicit patent grants.",
+                "Includes clear terms regarding trademarks and liability protections."
+        },
         mixinStandardHelpOptions = true,
-        usageHelpAutoWidth = true
+        usageHelpAutoWidth = true,
+        synopsisHeading = "%nUsage:%n",
+        descriptionHeading = "%nDescription:%n%n",
+        optionListHeading = "%nOptions:%n"
 )
 public class ApacheCommand implements Runnable {
     @CommandLine.Mixin

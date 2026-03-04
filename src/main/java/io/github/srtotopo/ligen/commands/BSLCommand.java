@@ -9,9 +9,17 @@ import java.nio.file.Paths;
 
 @CommandLine.Command(
         name = "bsl",
-        description = "Generates a BSL license file.",
+        version = "1.0.0",
+        description = {
+                "Generate BSL 1.0 license",
+                "A simple and permissive license commonly used for C++ libraries like Boost. Requires minimal",
+                "attribution in documentation, making it very liberal for commercial and open-source use."
+        },
         mixinStandardHelpOptions = true,
-        usageHelpAutoWidth = true
+        usageHelpAutoWidth = true,
+        synopsisHeading = "%nUsage:%n",
+        descriptionHeading = "%nDescription:%n%n",
+        optionListHeading = "%nOptions:%n"
 )
 public class BSLCommand implements Runnable {
     @CommandLine.Mixin

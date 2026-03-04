@@ -11,9 +11,17 @@ import java.nio.file.Paths;
 
 @CommandLine.Command(
         name = "mit",
-        description = "Generates a MIT license file.",
+        version = "1.0.0",
+        description = {
+                "Generate MIT license",
+                "A simple and permissive open-source license that allows users to use, modify, and distribute",
+                "the software with minimal restrictions. Perfect for projects that want maximum freedom of use."
+        },
         mixinStandardHelpOptions = true,
-        usageHelpAutoWidth = true
+        usageHelpAutoWidth = true,
+        synopsisHeading = "%nUsage:%n",
+        descriptionHeading = "%nDescription:%n%n",
+        optionListHeading = "%nOptions:%n"
 )
 public class MitCommand implements Runnable {
     @CommandLine.Mixin
