@@ -24,7 +24,9 @@ var outputPath = Environment.CurrentDirectory;
 
 string filePath = FileService.WriteFile(template, outputPath);
 
-var message = new Panel(new TextPath(filePath))
+Console.WriteLine("");
+
+var message = new Panel(new TextPath(filePath).LeafColor(Color.Blue))
     .Header("[bold green]License Generated at[/]");
 
 AnsiConsole.Write(message);

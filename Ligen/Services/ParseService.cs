@@ -66,7 +66,7 @@ public class ParseService
         
         foreach (var replacement in _replacements)
         {
-            result = result.Replace($"{{{replacement.Key}}}", replacement.Value);
+            result = result.Replace("{{" + replacement.Key + "}}", replacement.Value);
         }
         
         return result;
