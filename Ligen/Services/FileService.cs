@@ -21,7 +21,7 @@ public static class FileService
         return reader.ReadToEnd();
     }
 
-    public static void WriteFile(string content, string outputPath)
+    public static string WriteFile(string content, string outputPath)
     {
         try
         {
@@ -29,6 +29,8 @@ public static class FileService
             string filePath = Path.Combine(outputPath, "LICENSE");
             
             File.WriteAllText(filePath, content, Encoding.UTF8);
+
+            return filePath;
         }
         catch (Exception e)
         {

@@ -4,16 +4,16 @@ namespace Ligen.Controllers;
 
 public class LicenseController
 {
-    private readonly Dictionary<string, License> _licenses = new()
+    private readonly Dictionary<string, string> _licenses = new()
     {
-        { "MIT", License.MIT },
-        { "Apache 2.0", License.APACHE2 },
-        { "BSD (BSL)", License.BSD },
-        { "Mozilla Public License 2.0", License.MPL2 },
-        { "GPLv3", License.GPL3 },
-        { "LGPLv3", License.LGPL3 },
-        { "AGPLv3", License.AGPL3 },
-        { "Unlicense", License.UNLICENSE }
+        { "MIT", "mit" },
+        { "Apache 2.0", "apache2" },
+        { "BSD (BSL)", "bsl" },
+        { "Mozilla Public License 2.0", "mozilla2" },
+        { "GPLv3", "gpl3" },
+        { "LGPLv3", "lgpl3" },
+        { "AGPLv3", "agpl3" },
+        { "Unlicense", "unlicense" }
     };
 
     private readonly Dictionary<string, string> _licenseInfo = new()
@@ -28,7 +28,7 @@ public class LicenseController
         { "Unlicense", "A complete public domain dedication. The author waives all copyright, allowing anyone to use, modify, or distribute the software for any purpose with no conditions." }
     };
 
-    public License AskLicense()
+    public string AskLicense()
     {
         var choise = AnsiConsole.Prompt(
             new SelectionPrompt<string>()

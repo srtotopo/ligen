@@ -1,4 +1,5 @@
 ﻿using Ligen.Controllers;
+using Ligen.Services;
 using Spectre.Console;
 
 LicenseController licenseController = new LicenseController();
@@ -16,6 +17,15 @@ if (choice == "About Licenses")
     return 0;
 }
 
-var license = licenseController.AskLicense();
-AnsiConsole.MarkupLine($"[green bold]You selected:[/] [blue bold]{license}[/]");
+string license = licenseController.AskLicense();
+string template = ParseController.ParseTemplate(license);
+
+var outputPath = Environment.CurrentDirectory;
+
+string filePath = FileService.WriteFile(template, outputPath);
+
+var message = new Panel(new TextPath(filePath))
+    .Header("[bold green]License Generated at[/]");
+
+AnsiConsole.Write(message);
 return 0;
