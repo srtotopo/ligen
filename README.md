@@ -52,7 +52,3 @@ After generation, the tool writes a `LICENSE` file to your current directory.
 ## Contributing
 
 Contributions are welcome. Feel free to open an issue or submit a pull request.
-
-## License
-
-This repository currently includes a `LICENSE` file at the root.
