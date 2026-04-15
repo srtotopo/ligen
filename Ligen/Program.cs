@@ -5,8 +5,8 @@ LicenseController licenseController = new LicenseController();
 
 var choice = AnsiConsole.Prompt(
     new SelectionPrompt<string>()
-        .Title("\nSelect an option:")
-        .HighlightStyle(new Style(Color.Green, null, Decoration.Bold))
+        .Title("[bold green]Select an option:[/]")
+        .HighlightStyle(new Style(Color.Blue, null, Decoration.Bold))
         .AddChoices("Generate Licence", "About Licenses")
     );
 

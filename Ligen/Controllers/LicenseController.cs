@@ -32,7 +32,7 @@ public class LicenseController
     {
         var choise = AnsiConsole.Prompt(
             new SelectionPrompt<string>()
-                .Title("\n[bold]Select a license:[/]")
+                .Title("[bold green]Select a license:[/]")
                 .HighlightStyle(new Style(Color.Blue, null, Decoration.Bold))
                 .AddChoices(_licenses.Keys)
         );
@@ -43,14 +43,14 @@ public class LicenseController
     public void LicenceInfo()
     {
         var infoTable = new Table()
-            .AddColumn("[bold yellow]License[/]", col => col.Width(20))
-            .AddColumn("[bold yellow]Description[/]", col => col.Width(80))
+            .AddColumn("[bold green]License[/]", col => col.Width(20))
+            .AddColumn("[bold green]Description[/]", col => col.Width(80))
             .ShowRowSeparators()
             .RoundedBorder();
 
         foreach (var licenseInfo in _licenseInfo)
         {
-            infoTable.AddRow($"[bold]{licenseInfo.Key}[/]", licenseInfo.Value);
+            infoTable.AddRow($"[bold blue]{licenseInfo.Key}[/]", licenseInfo.Value);
         }
         
         AnsiConsole.Write(infoTable);
